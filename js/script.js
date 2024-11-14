@@ -64,7 +64,8 @@ async function getCityName(lat, lon) {
       data.results[0].components.village;
     return cityComponent || "Cidade desconhecida";
   } else {
-    throw new Error("Não foi possível encontrar o nome da cidade.");
+    // Em vez de lançar um erro, retornamos "Cidade desconhecida"
+    return "Cidade desconhecida";
   }
 }
 
@@ -157,3 +158,11 @@ function initializeApp() {
 
 // Chame `initializeApp` quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", initializeApp);
+
+// Exporte as funções para testes
+module.exports = {
+  getCityName,
+  getWeatherData,
+  fetchAndDisplayWeather,
+  updateWeatherUI,
+};
