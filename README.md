@@ -23,6 +23,7 @@ WeatherApp é uma aplicação web simples de previsão do tempo que utiliza HTML
 
 weatherApp/ 
  # Diretório com testes unitários 
+ ```
  ├── __tests__/
  │ └── weather.test.js 
  ├── css/ 
@@ -34,6 +35,7 @@ weatherApp/
  ├── .gitignore # Arquivos ignorados pelo Git 
  ├── package.json # Configuração do projeto e dependências 
  └── README.md # Documentação do projeto
+```
 
 ## Instalação e Configuração
 
