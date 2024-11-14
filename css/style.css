@@ -165,7 +165,7 @@ button:hover {
   }
 }
 
-/* Estilo para telas médias (ex: tablets) */
+/* Estilo para telas médias */
 @media (min-width: 481px) and (max-width: 768px) {
   .weather-container {
     width: 90%;

@@ -4,16 +4,21 @@ const { getCityName, getWeatherData, fetchAndDisplayWeather, updateWeatherUI } =
 // Mock global do fetch
 global.fetch = jest.fn();
 
-// Configura o ambiente DOM para testes
-document.body.innerHTML = `
-  <div class="city"></div>
-  <div id="temperature"></div>
-  <div id="temperature-min"></div>
-  <div id="temperature-max"></div>
-  <div id="wind-description"></div>
-  <div id="humidity"></div>
-  <div id="clouds"></div>
-`;
+beforeEach(() => {
+  // Limpa o mock antes de cada teste
+  fetch.mockClear();
+
+  // Configura o ambiente DOM para testes
+  document.body.innerHTML = `
+    <div class="city"></div>
+    <div id="temperature"></div>
+    <div id="temperature-min"></div>
+    <div id="temperature-max"></div>
+    <div id="wind-description"></div>
+    <div id="humidity"></div>
+    <div id="clouds"></div>
+  `;
+});
 
 describe("Função getCityName", () => {
   it("Deve retornar o nome da cidade corretamente", async () => {
@@ -57,6 +62,7 @@ describe("Função updateWeatherUI", () => {
 
     updateWeatherUI("São Paulo", mockData);
 
+    // Verifica se os dados foram corretamente inseridos no DOM
     expect(document.querySelector(".city").textContent).toBe("São Paulo");
     expect(document.getElementById("temperature").textContent).toBe("25°C");
     expect(document.getElementById("temperature-min").textContent).toBe("22°C");

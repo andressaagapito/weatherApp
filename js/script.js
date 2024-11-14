@@ -145,7 +145,7 @@ function initializeApp() {
     }
   }
 
-  // Adicione o evento de escuta ao input de cidade para enviar ao pressionar Enter
+  // Adiciona o evento de escuta ao input de cidade para enviar ao pressionar Enter
   document
     .getElementById("city-input")
     .addEventListener("keypress", function (event) {
@@ -156,10 +156,10 @@ function initializeApp() {
     });
 }
 
-// Chame `initializeApp` quando o DOM estiver carregado
+// Chama `initializeApp` quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", initializeApp);
 
-// Exporte as funções para testes
+// Exportando as funções para testes
 module.exports = {
   getCityName,
   getWeatherData,
